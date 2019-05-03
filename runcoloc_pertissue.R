@@ -62,10 +62,9 @@ p12 = 1 - qs$pi0
 print(p12)
 
 
-#read in gwasdata
-gwas = read_delim("/home/shwetar/glgc/data/hg38/forcoloc_metal_ldl.txt",delim="\t")
-gwas$SNP = gsub(":","_",gwas$SNP)
-
+#read in gwasdata: obsolete
+#gwas = read_delim("/home/shwetar/glgc/data/hg38/forcoloc_metal_ldl.txt",delim="\t")
+#gwas$SNP = gsub(":","_",gwas$SNP)
 
 #now submit coloc analyses for each ld block
 j = 1
