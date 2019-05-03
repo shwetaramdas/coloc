@@ -70,6 +70,13 @@ for(gene in egenes$gene_id){
 
         #merge with gwas data
         m = inner_join(gwas, eqtl, by=c("SNP" = "variant"))
+        r1 = which(m$maf == 0)
+        r2 = which(m$EAF == 0)
+
+        if(length(union(r1, r2)) > 0){
+                m = m[-union(r1,r2),]
+        }
+
         print(nrow(m))
         dataset1 = list()
         dataset2 = list()
