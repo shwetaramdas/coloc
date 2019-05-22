@@ -5,9 +5,6 @@ library(coloc)
 library(qvalue)
 
 overlap = function(chr, start, end){
-#       print(chr)
-#       print(start)
-#       print(end)
         toreturn = sentinel %>% filter(X2 == chr) %>% filter((X3 >= start) & (X3 <= end))
         return(nrow(toreturn))
 }
